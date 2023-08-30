@@ -10,9 +10,9 @@ export default async function Home() {
   const merah = await getMerah(todayDate, dateOptions)
 
   return (
-    <div className="h-screen flex flex-col justify-between items-center px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 bg-ivory">
-      <div className="flex flex-row justify-start items-center">
-        <p className="text-left lg:text-center text-xs font-bold text-black">Hari Ini: {todayIDDateString}</p>
+    <div className="h-screen flex flex-col justify-between px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 bg-ivory">
+      <div className="flex flex-row justify-center items-center">
+        <p className="text-left lg:text-center text-xs font-bold text-black">Hari Ini: <span className="text-darkivory">{todayIDDateString}</span></p>
       </div>
       <div className="flex flex-col justify-between items-center">
         <div className="flex flex-col justify-between items-center">
@@ -24,14 +24,14 @@ export default async function Home() {
           <p className="text-center text-md md:text-lg lg:text-xl font-bold text-black">{untilMerahMsg(merah.days_to_holiday)}</p>
         </div>
         <div className="flex flex-col justify-between items-center mt-6 md:mt-8 lg:mt-10 p-1 md:p-2 bg-shadeivory rounded-lg">
-          <p className="text-center text-xs font-bold text-darkivory">{merahGapMsg(todayIDDateString)}</p>
+          <p className="text-center text-xs font-bold text-darkivory">{merahGapMsg(merah.holiday_date)}</p>
         </div>
       </div>
-      <div className="flex flex-row justify-between items-center gap-x-1">
+      <div className="flex flex-row justify-center items-center gap-x-1">
         <footer className="text-right lg:text-center text-xxs font-bold text-black">
-          situs oleh <Link className="text-darkivory hover:text-violet" href="https://github.com/raihanizar">@raihanizar </Link> 
-          berdasarkan <Link className="text-violet hover:text-darkviolet" href="https://api-harilibur.vercel.app/">API Hari Libur </Link> 
-          oleh <Link className="text-darkivory hover:text-violet" href="https://github.com/kresnasatya">@kresnasatya </Link> 
+          situs oleh <Link className="text-darkivory hover:underline" href="https://github.com/raihanizar">@raihanizar </Link> 
+          /
+          data dari <Link className="text-violet hover:underline" href="https://api-harilibur.vercel.app/">API Hari Libur </Link>
         </footer>
       </div>
     </div>
@@ -95,8 +95,8 @@ function untilMerahMsg(days) {
 function merahGapMsg(merahString) {
   const weekdayString = merahString.split(", ")[0]
   if (weekdayString === "Selasa" || weekdayString === "Kamis") {
-    return "P.S. Tanggal merah dekat hari kejepit tuh, bisa siapin cuti. 👌"
+    return "Tanggal merah dekat hari kejepit tuh, bisa siapkan cuti. 👌"
   } else if (weekdayString === "Senin" || weekdayString === "Jumat") {
-    return "P.S. Tanggal merah dan weekend berturut-turut tuh, siap-siap liburan panjang! 🏖️"
+    return "Tanggal merah dan weekend berturut-turut tuh, siap-siap liburan panjang! 🏖️"
   }
 }
