@@ -1,5 +1,6 @@
 import './globals.css'
 import { Archivo } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: 'Kapan Tanggal Merah?',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={archivo.className}>
       <body>{children}</body>
+      <Analytics />
     </html>
   )
 }
