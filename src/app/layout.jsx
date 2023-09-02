@@ -2,9 +2,24 @@ import './globals.css'
 import { Archivo } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+
 export const metadata = {
   title: 'Kapan Tanggal Merah?',
-  description: 'Situs untuk mengecek kapan tanggal merah terdekat di Indonesia.',
+  description: 'Kapan tanggal merah terdekat? Cek di sini!',
+  openGraph: {
+    title: 'Kapan Tanggal Merah?',
+    description: 'Kapan tanggal merah terdekat? Cek di sini!',
+    url: baseUrl,
+    siteName: 'Kapan Tanggal Merah?',
+    locale: 'id_ID',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Kapan Tanggal Merah?',
+    description: 'Kapan tanggal merah terdekat? Cek di sini!',
+  },
 }
 
 const archivo = Archivo({
