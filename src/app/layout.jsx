@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'Cek Tanggal Merah',
     description: 'Kapan tanggal merah terdekat? Cek di sini!',
-    images: [`${baseUrl}/opengraph-image.png`],
+    images: [`${baseUrl}/og.png`],
     url: baseUrl,
     siteName: 'Cek Tanggal Merah',
     locale: 'id_ID',
@@ -21,7 +21,7 @@ export const metadata = {
     card: 'summary',
     title: 'Cek Tanggal Merah',
     description: 'Kapan tanggal merah terdekat? Cek di sini!',
-    images: [`${baseUrl}/twitter-image.png`]
+    images: [`${baseUrl}/og.png`]
   },
 }
 
