@@ -1,5 +1,5 @@
 import './globals.css'
-import { Archivo } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
@@ -26,7 +26,7 @@ export const metadata = {
   },
 }
 
-const archivo = Archivo({
+const rubik = Rubik({
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap',
@@ -35,7 +35,7 @@ const archivo = Archivo({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={archivo.className}>
+    <html lang="id" className={rubik.className}>
       <body>{children}</body>
       <Analytics />
     </html>
