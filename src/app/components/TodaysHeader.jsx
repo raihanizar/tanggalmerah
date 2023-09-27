@@ -1,5 +1,12 @@
 function TodaysHeader({ todaysDate, dateOptions }) {
-  const todayIDDateString = todaysDate.toLocaleDateString('id-ID', dateOptions)
+  let dateOptionsOverride = { weekday: 'long', 
+                              day: 'numeric',  
+                              month: 'long', 
+                              year: 'numeric',
+                              hour: 'numeric',
+                              minute: 'numeric',
+                              second: 'numeric' }
+  const todayIDDateString = todaysDate.toLocaleDateString('id-ID', dateOptionsOverride)
 
   return (
     <div className="flex flex-row justify-center items-center">
